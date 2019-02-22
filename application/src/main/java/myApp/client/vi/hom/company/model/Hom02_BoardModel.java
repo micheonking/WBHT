@@ -44,10 +44,13 @@ public class Hom02_BoardModel implements GridDataModel {
 	public Date getSettleDate() {
 		return settleDate;
 	}
-	public void setSetdate(Date settleDate) {
+	public void setSettleDate(Date settleDate) {
 		this.settleDate = settleDate;
 	}
 	public Long getCnt() {
+		if(cnt == null) {
+			cnt = (long)0;
+		}
 		return cnt;
 	}
 	public void setCnt(Long cnt) {

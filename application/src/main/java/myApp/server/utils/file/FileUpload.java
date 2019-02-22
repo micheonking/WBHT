@@ -33,7 +33,8 @@ public class FileUpload implements javax.servlet.Servlet {
 	*/
 	private String getUploadPath(Long fileId){
 		MyAppProperties a = new MyAppProperties("filePath");
-		return a.getProperty() + (fileId/100); 
+//		return a.getProperty() + (fileId/100);
+		return a.getProperty();
 	}
 	
 	@Override
@@ -128,7 +129,6 @@ public class FileUpload implements javax.servlet.Servlet {
 			fileModel.setFileId(fileId);
 			fileModel.setParentId(parentId);
 			fileModel.setServerPath(this.getUploadPath(fileModel.getFileId())); //하나의 폴더안에 100개씩 잘라 보관한다.
-			fileModel.setParentId(parentId);
 			
 			String fileName = fileItem.getName() ; 
 			fileModel.setFileName(fileName);
@@ -144,10 +144,11 @@ public class FileUpload implements javax.servlet.Servlet {
 			fileModel.setNote("");
 			
 			sqlSession.insert("sys10_file.insert", fileModel);
-			
 			sqlSession.commit();
+
+			//mysql인 경우 ID를 미리 생성할수가 없기 때문에 방금 생성된 fileModel을 다시 가져와야함.
+			fileModel = sqlSession.selectOne("sys10_file.selectOneByParentId", fileModel.getParentId());
 			sqlSession.close();
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -156,6 +157,7 @@ public class FileUpload implements javax.servlet.Servlet {
 				sqlSession.close();
 			}
 		}
+
 		return fileModel; 
 	}
 	

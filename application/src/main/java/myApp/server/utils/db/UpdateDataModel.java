@@ -46,8 +46,7 @@ public class UpdateDataModel<T extends GridDataModel> {
 
 		// BD마다 스키마가 다르다. 
 		// 오라클, MS-SQL, Tibero 등. 
-		List<ColumnModel> columnList = sqlSession.selectList("dbConfig.getColumnListTibero", tableName.toUpperCase());
-
+		List<ColumnModel> columnList = sqlSession.selectList("dbConfig.getColumnListMSSQL", tableName.toUpperCase());
 		List<GridDataModel> updateList = new ArrayList<GridDataModel>(); 
 		for(ResultMapping mapping : sqlSession.getConfiguration().getResultMap(tableName + ".mapper").getResultMappings()){
 			if(mapping.getColumn() != null){

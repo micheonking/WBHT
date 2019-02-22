@@ -3,16 +3,12 @@ package myApp.client.vi.hom;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.logical.shared.SelectionHandler;
-import com.sencha.gxt.cell.core.client.TextButtonCell;
 import com.sencha.gxt.core.client.util.Margins;
 import com.sencha.gxt.widget.core.client.button.CellButtonBase;
-import com.sencha.gxt.widget.core.client.button.TextButton;
 import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
-import com.sencha.gxt.widget.core.client.event.SelectEvent;
-import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
+import com.sencha.gxt.widget.core.client.event.RowClickEvent;
+import com.sencha.gxt.widget.core.client.event.RowClickEvent.RowClickHandler;
 import com.sencha.gxt.widget.core.client.grid.Grid;
-import com.sencha.gxt.widget.core.client.info.Info;
 import com.sencha.gxt.widget.core.client.selection.SelectionChangedEvent;
 import com.sencha.gxt.widget.core.client.selection.SelectionChangedEvent.SelectionChangedHandler;
 
@@ -22,10 +18,10 @@ import myApp.client.service.GridDeleteData;
 import myApp.client.service.GridInsertRow;
 import myApp.client.service.GridRetrieveData;
 import myApp.client.service.GridUpdate;
-import myApp.client.vi.MenuOpener;
-import myApp.client.vi.MenuTree;
+import myApp.client.utils.InterfaceCallbackResult;
 import myApp.client.vi.hom.StartPage;
 import myApp.client.vi.hom.bullentin.Board;
+import myApp.client.vi.hom.bullentin.PopUp_Board;
 import myApp.client.vi.hom.company.model.Hom02_BoardModel;
 import myApp.client.vi.hom.company.model.Hom02_BoardModelProperties;
 
@@ -64,16 +60,29 @@ public class Hom02_Tab_Board extends BorderLayoutContainer implements InterfaceG
 		grid.setHeight(20);
 
 		this.setCenterWidget(this.grid, centerBorLayoutData);
-		this.grid.getSelectionModel().addSelectionChangedHandler(new SelectionChangedHandler<Hom02_BoardModel>(){
-		
-		@Override
-		public void onSelectionChanged(SelectionChangedEvent<Hom02_BoardModel> event) {
-//			popupPage();
-//			int xPosition = mainButton.getAbsoluteLeft();
-			startPage.changePage("4");
-		}
+//		this.grid.getSelectionModel().addSelectionChangedHandler(new SelectionChangedHandler<Hom02_BoardModel>(){
+//			@Override
+//			public void onSelectionChanged(SelectionChangedEvent<Hom02_BoardModel> event) {
+//	//			popupPage();
+//	//			int xPosition = mainButton.getAbsoluteLeft();
+//				startPage.changePage("4");
+//			}
+//		});
+		this.grid.addRowClickHandler(new RowClickHandler() {
+			@Override
+			public void onRowClick(RowClickEvent event) {
+				int rownum = event.getRowIndex();
+				Long boardId = grid.getStore().get(rownum).getBoardId();
+				PopUp_Board popUpBoard = new PopUp_Board();
+				popUpBoard.open(boardId, false, "notice", new InterfaceCallbackResult() {
+					@Override
+					public void execute(Object result) {
+						retrieve();
+					}
+				});
+			}
 		});
-			
+		
 		retrieve();
 	}
 
@@ -82,12 +91,10 @@ public class Hom02_Tab_Board extends BorderLayoutContainer implements InterfaceG
 //		textButton4.addSelectHandler(new SelectHandler() {
 //		@Override
 //		public void onSelect(SelectEvent event) {
-	Info.display("","asd");
 //			int xPosition = mainButton.getAbsoluteLeft();
 			startPage.changePage("4");
 //		}
 		
-		Info.display("","123456");
 		Board notification = new Board();
 		notification.show();	
 	}
@@ -109,7 +116,8 @@ public class Hom02_Tab_Board extends BorderLayoutContainer implements InterfaceG
 		GridRetrieveData<Hom02_BoardModel> service = new GridRetrieveData<Hom02_BoardModel>(grid.getStore());
 		service.addParam("typeCode", "notice");
 		service.addParam("setCount", (long)4);
-		service.retrieve("hom.Hom02_Board.selectByTypeCode2");
+		service.addParam("startRowNum", (long)0);
+		service.retrieve("hom.Hom02_Board.selectByTypeCode");
 	}
 
 	@Override

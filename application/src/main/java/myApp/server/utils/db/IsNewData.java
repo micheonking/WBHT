@@ -9,9 +9,10 @@ public class IsNewData {
 	
 	public Long getSeq(SqlSession sqlSession) {
 		
-		Long seq = sqlSession.selectOne("dbConfig.getSeq");
-		System.out.println("seq is " + seq); 
-		return seq; 
+//		Long seq = sqlSession.selectOne("dbConfig.getSeq");
+//		System.out.println("seq is " + seq); 
+//		return seq;
+		return null;
 	}
 	
 	public Boolean isNewData(SqlSession sqlSession, String tableName, Long id) {

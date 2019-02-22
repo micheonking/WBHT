@@ -5,6 +5,8 @@ import java.util.List;
 import com.google.gwt.core.client.GWT;
 import com.sencha.gxt.core.client.util.Margins;
 import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
+import com.sencha.gxt.widget.core.client.event.RowClickEvent;
+import com.sencha.gxt.widget.core.client.event.RowClickEvent.RowClickHandler;
 import com.sencha.gxt.widget.core.client.grid.Grid;
 
 import myApp.client.grid.GridBuilder;
@@ -13,6 +15,8 @@ import myApp.client.service.GridDeleteData;
 import myApp.client.service.GridInsertRow;
 import myApp.client.service.GridRetrieveData;
 import myApp.client.service.GridUpdate;
+import myApp.client.utils.InterfaceCallbackResult;
+import myApp.client.vi.hom.bullentin.PopUp_Board;
 import myApp.client.vi.hom.company.model.Hom02_BoardModel;
 import myApp.client.vi.hom.company.model.Hom02_BoardModelProperties;
  
@@ -57,6 +61,20 @@ public class Hom02_Tab_News extends BorderLayoutContainer implements InterfaceGr
 
 //		this.buildGrid().setBorders(true);
 		this.setCenterWidget(this.grid, centerBorLayoutData);
+		this.grid.addRowClickHandler(new RowClickHandler() {
+			@Override
+			public void onRowClick(RowClickEvent event) {
+				int rownum = event.getRowIndex();
+				Long boardId = grid.getStore().get(rownum).getBoardId();
+				PopUp_Board popUpBoard = new PopUp_Board();
+				popUpBoard.open(boardId, false, "release", new InterfaceCallbackResult() {
+					@Override
+					public void execute(Object result) {
+						retrieve();
+					}
+				});
+			}
+		});
         
         retrieve();
     }
@@ -77,7 +95,8 @@ public class Hom02_Tab_News extends BorderLayoutContainer implements InterfaceGr
     	GridRetrieveData<Hom02_BoardModel> service = new GridRetrieveData<Hom02_BoardModel>(grid.getStore());
 		service.addParam("typeCode", "release");
 		service.addParam("setCount", (long)4);
-        service.retrieve("hom.Hom02_Board.selectByTypeCode2");
+		service.addParam("startRowNum", (long)0);
+        service.retrieve("hom.Hom02_Board.selectByTypeCode");
 	}
 
 	@Override

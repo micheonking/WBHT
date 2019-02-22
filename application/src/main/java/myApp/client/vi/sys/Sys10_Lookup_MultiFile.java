@@ -22,6 +22,7 @@ import com.sencha.gxt.widget.core.client.form.FormPanel;
 import com.sencha.gxt.widget.core.client.form.FormPanel.Encoding;
 import com.sencha.gxt.widget.core.client.form.FormPanel.Method;
 import com.sencha.gxt.widget.core.client.grid.Grid;
+import com.sencha.gxt.widget.core.client.info.Info;
 
 import myApp.client.grid.GridBuilder;
 import myApp.client.service.GridRetrieveData;
@@ -67,6 +68,7 @@ public class Sys10_Lookup_MultiFile extends VerticalLayoutContainer {
 		});
 		this.add(uploadButton);
 		grid.setHeight(height);
+		grid.setWidth(665);
 		this.add(grid);
 
 		fileUpdownForm.getForm().setVisible(false);
@@ -116,7 +118,7 @@ public class Sys10_Lookup_MultiFile extends VerticalLayoutContainer {
 		GridBuilder<Sys10_FileModel> gridBuilder = new GridBuilder<Sys10_FileModel>(properties.keyId());
 
 		gridBuilder.setChecked(SelectionMode.SINGLE);
-		gridBuilder.addText(properties.fileName(), 300, "파일명");
+		gridBuilder.addText(properties.fileName(), 320, "파일명");
 		gridBuilder.addDouble(properties.size(), 100, "파일크기(KB)");
 
 		ActionCell<String> downloadCell = new ActionCell<String>("Down", new ActionCell.Delegate<String>(){
@@ -160,10 +162,9 @@ public class Sys10_Lookup_MultiFile extends VerticalLayoutContainer {
 	public void changeViewLayout() {
 		uploadButton.hide();
 		grid.setHeight(height + 35);
-		grid.getColumnModel().getColumn(5).setHidden(true);
-		grid.getColumnModel().getColumn(2).setWidth(370);
+//		grid.getColumnModel().getColumn(2).setWidth(370);
+		grid.getColumnModel().getColumn(5).setHidden(hidden);
 		grid.getView().refresh(true);
 	}
-
 
 }

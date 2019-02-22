@@ -126,13 +126,13 @@ public class CoverPageBody extends ContentPanel {
 //		HorizontalLayoutData rowLayout1 = new HorizontalLayoutData(0.25, 30, new Margins(10, 380, 0, 13));	// Double Column Size
 //		HorizontalLayoutData rowLayout2 = new HorizontalLayoutData(0.25, 160, new Margins(10, 0, 0, 13));	// Double Column Size
 
-		SafeHtml button4Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><left><font color='#606060' style='font-family:NanumGothic; font-size:1.3em; font-weight:bold;'>공지사항<br><br></font></div>");
-		SafeHtml button5Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><left><font color='#606060' style='font-family:NanumGothic; font-size:1.3em; font-weight:bold;'>보도자료<br><br></font></div>");
+		SafeHtml button4Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><left><font color='#606060' style='font-family:NanumGothic; font-size:1.3em; font-weight:bold;'>게시판<br><br></font></div>");
+		SafeHtml button5Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><left><font color='#606060' style='font-family:NanumGothic; font-size:1.3em; font-weight:bold;'>홍보자료<br><br></font></div>");
 	    TextButton textButton1 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
 	    TextButton textButton2 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
 		textButton1.setHTML(button4Html);
 //		textButton1.setWidth(130);
-//		textButton1.setHeight(60);
+//		textButton1.setHeight(100);
 		textButton1.setBorders(false);
 		textButton1.addSelectHandler(new SelectHandler() {
 			@Override
@@ -145,20 +145,20 @@ public class CoverPageBody extends ContentPanel {
 		});
 		textButton2.setHTML(button5Html);
 //		textButton2.setWidth(130);
-//		textButton2.setHeight(120);
+//		textButton2.setHeight(100);
 		textButton2.setBorders(false);
 		textButton2.addSelectHandler(new SelectHandler() {
 			@Override
 			public void onSelect(SelectEvent event) {
 //				StartPage.openTabPage(StartPage.tabPanel, "KFIA소식");
-				StartPage.newsPage = 3;
+				StartPage.newsPage = 2;
 //				Info.display("StartPage.newsPage : ",""+StartPage.newsPage);
 				startPage.changePage("4");
 //				StartPage.changePage(xPosition, "4");
 			}
 		});
 
-		HorizontalLayoutData rowLayout1 = new HorizontalLayoutData(0.5, 40, new Margins(0, 380, 0, 18));	// Double Column Size
+		HorizontalLayoutData rowLayout1 = new HorizontalLayoutData(0.5, 45, new Margins(0, 380, 0, 18));	// Double Column Size
 		HorizontalLayoutData rowLayout2 = new HorizontalLayoutData(0.5, 180, new Margins(0, 0, 0, 18));		// Double Column Size
 
 		HorizontalLayoutContainer row00 = new HorizontalLayoutContainer();
@@ -172,7 +172,7 @@ public class CoverPageBody extends ContentPanel {
 		row01.add(eastBoard, rowLayout2);
 
 		VerticalLayoutContainer layoutContainer = new VerticalLayoutContainer();
-		layoutContainer.add(row00, new VerticalLayoutData(1, 30, new Margins(0, 0, 0, 0)));
+		layoutContainer.add(row00, new VerticalLayoutData(1, 45, new Margins(0, 0, 0, 0)));
 		layoutContainer.add(row01, new VerticalLayoutData(1, 160, new Margins(0, 0, 0, 0)));
 
 		centerVBox.add(layoutContainer, new BoxLayoutData(new Margins(0, 1, 1, 1)));

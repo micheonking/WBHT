@@ -46,13 +46,13 @@
 </select>
 
 <select id="selectOneByParentId" resultMap="mapper" parameterType="Long" > 
-select * from(
+select * from (
 	select 	sys10_file.*
 	from 	sys10_file
 	where	sys10_parent_id = #{parentId}
-    order by sys10_reg_date desc
-    )
-where rownum = 1
+    order by sys10_file_id desc
+    ) a
+limit 1
 </select>
 
 <select id="selectOneFileName" resultType="String" parameterType="Long" >
@@ -104,7 +104,7 @@ values
      ( #{fileId}
      , #{parentId}
      , #{fileName}
-     , sysdate
+     , now()
      , #{serverPath}
      , #{size}
      , #{note}
@@ -156,7 +156,7 @@ merge into sys10_file a
 update sys10_file
    set sys10_parent_id = #{parentId}
      , sys10_file_nm = #{fileName}
-     , sys10_reg_date = sysdate
+     , sys10_reg_date = now()
      , sys10_server_path = #{serverPath}
      , sys10_size = #{size}
      , sys10_note = #{note}

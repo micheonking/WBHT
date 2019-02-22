@@ -3,44 +3,80 @@
 
 <mapper namespace="hom02_board">
 
-<resultMap 	id="mapper" type="myApp.client.vi.hom.company.model.Hom02_BoardModel" >
-	<id		column="hom02_board_id"			property="boardId"/>
-	<result	column="hom02_type_cd"			property="typeCode"/>
-	<result	column="hom02_title_nm"			property="titleName"/>
-	<result	column="hom02_settle_dt"		property="settleDate"/>
-	<result	column="hom02_cnt"				property="cnt"/>
-	<result	column="hom02_file_name"		property="fileName"/>
-	<result	column="hom02_file_path"		property="filePath"/>
-	<result	column="hom02_writer"			property="writer"/>
-	<result	column="hom02_contents"			property="contents"/>
+	<resultMap 	id="mapper" type="myApp.client.vi.hom.company.model.Hom02_BoardModel" >
+		<id		column="hom02_board_id"			property="boardId"/>
+		<result	column="hom02_type_cd"			property="typeCode"/>
+		<result	column="hom02_title_nm"			property="titleName"/>
+		<result	column="hom02_settle_dt"		property="settleDate"/>
+		<result	column="hom02_cnt"				property="cnt"/>
+		<result	column="hom02_file_name"		property="fileName"/>
+		<result	column="hom02_file_path"		property="filePath"/>
+		<result	column="hom02_writer"			property="writer"/>
+		<result	column="hom02_contents"			property="contents"/>
+	</resultMap>
 
-</resultMap>
+	<select id="selectById" resultMap="mapper" parameterType="Long" > 
+		select 	*
+		from 	hom02_board
+		where	hom02_board_id = #{boardId}
+	</select>
 
-<select id="selectById" resultMap="mapper" parameterType="Long" > 
-	select 	a.*
-	from 	hom02_board
-	where	hom02_board_id = #{boardId}
-</select>
+	<select id="selectByTypeCode" resultMap="mapper" parameterType="HashMap">
+		select	*
+		  from	( select *
+				    from hom02_board
+			   	   where hom02_type_cd like #{typeCode}
+					 and CONCAT(hom02_title_nm, ifnull(hom02_contents,'')) like #{searchText}
+				   order by hom02_settle_dt desc
+				) a
+<!-- 		 limit	#{startRowNum}, #{setCount} -->
+		<choose><when test="setCount>0">limit #{setCount}</when></choose>
+	</select>
 
-<select id="selectByTypeCode" resultMap="mapper" parameterType="HashMap">
-select	*
-from	(
-	select 	a.*
-	from 	hom02_board a
-	where	hom02_type_cd like #{typeCode}
-	and		hom02_title_nm like #{titleName}
-	order by hom02_settle_dt desc
-)	where	rownum	<![CDATA[<=]]>    #{setCount}
-</select>
+	<update id="updateCnt" parameterType="Long">
+		update hom02_board
+		   set hom02_cnt = ifnull(hom02_cnt, 0) + 1
+		 where hom02_board_id = #{boardId}
+	</update>
 
-<select id="selectByTypeCode2" resultMap="mapper" parameterType="HashMap">
-select	*
-from	(
-	select 	a.*
-	from 	hom02_board a
-	where	hom02_type_cd like #{typeCode}
-	order by hom02_settle_dt desc
-)	where	rownum	<![CDATA[<=]]>    #{setCount}
-</select>
+	<insert id="insert" parameterType="myApp.client.vi.hom.company.model.Hom02_BoardModel">
+		insert
+		  into hom02_board
+		     ( hom02_board_id
+		     , hom02_type_cd
+		     , hom02_title_nm
+		     , hom02_settle_dt
+		     , hom02_cnt
+		     , hom02_file_name
+		     , hom02_file_path
+		     , hom02_writer
+		     , hom02_contents
+		     )
+		     values
+		     ( #{boardId}
+		     , #{typeCode}
+		     , #{titleName}
+		     , #{settleDate}
+		     , 0
+		     , #{fileName}
+		     , #{filePath}
+		     , #{writer}
+		     , #{contents}
+		     ) on duplicate key update
+			hom02_title_nm = #{titleName}
+		   ,hom02_settle_dt = #{settleDate}
+		   ,hom02_writer = #{writer}
+		   ,hom02_contents = #{contents}
+	</insert>
+
+<!-- 	<select id="selectByTypeCode2" resultMap="mapper" parameterType="HashMap"> -->
+<!-- 	select	* -->
+<!-- 	from	( -->
+<!-- 		select 	a.* -->
+<!-- 		from 	hom02_board a -->
+<!-- 		where	hom02_type_cd like #{typeCode} -->
+<!-- 		order by hom02_settle_dt desc -->
+<!-- 	)	where	rownum	<![CDATA[<=]]>    #{setCount} -->
+<!-- 	</select> -->
 
 </mapper>

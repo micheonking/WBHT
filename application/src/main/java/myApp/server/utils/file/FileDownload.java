@@ -118,8 +118,9 @@ public class FileDownload implements javax.servlet.Servlet {
         }
         
         //file = new File(this.defaultPath + (fileModel.getFileId()/100) + "\\"  + fileModel.getFileId());
-        file = new File(getUploadPath() + (fileModel.getFileId()/100) + getFolderPath()  + fileModel.getFileId());
-        System.out.println(getUploadPath() + (fileModel.getFileId()/100) + getFolderPath()  + fileModel.getFileId());
+//        file = new File(getUploadPath() + (fileModel.getFileId()/100) + getFolderPath()  + fileModel.getFileId());
+        file = new File(getUploadPath() + fileModel.getFileId());
+        System.out.println(getUploadPath() + fileModel.getFileId());
         if (!file.exists()) {
         	setResult(response, "서버에 등록된 파일정보가 없습니다:" + fileModel.getFileName());
         	System.out.println("서버에 등록된 파일정보가 없습니다:" + fileModel.getFileName()); 

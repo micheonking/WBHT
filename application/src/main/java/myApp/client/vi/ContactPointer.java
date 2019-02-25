@@ -17,8 +17,8 @@ public class ContactPointer {
 	public void open() {
 
 		this.viewport.remove(container);
-//		viewport.add(new StartPage(), new MarginData(0, 0, 0, 0));
-		viewport.add(new Sys00_Admin(), new MarginData(0, 0, 0, 0));
+		viewport.add(new StartPage(), new MarginData(0, 0, 0, 0));
+//		viewport.add(new Sys00_Admin(), new MarginData(0, 0, 0, 0));
 		RootPanel.get().add(viewport);
 
 	}

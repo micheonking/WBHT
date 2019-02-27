@@ -85,7 +85,7 @@ public class FileUpload implements javax.servlet.Servlet {
 		        if(!subDir.exists()) {
 		        	subDir.mkdir(); // 해당 폴더가 없으면 신규로 만든다.   
 		        }
-		
+				
 		        File file = new File(fileModel.getServerPath(), fileModel.getFileId().toString());
 			    //file.deleteOnExit(); // Update할것. 
 		        fileItem.write(file);

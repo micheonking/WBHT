@@ -34,7 +34,7 @@ import myApp.client.vi.sys.Sys10_Lookup_MultiFile;
 public class PopUp_Board extends Window implements Editor<Hom02_BoardModel>, InterfaceServiceCall {
 	
 	Hom02_BoardModel model = new Hom02_BoardModel();
-	Sys10_Lookup_MultiFile fileForm = new Sys10_Lookup_MultiFile(null, "Y", 120);
+	Sys10_Lookup_MultiFile fileForm;
 
 	interface EditDriver extends SimpleBeanEditorDriver<Hom02_BoardModel, PopUp_Board> {
 	}
@@ -65,6 +65,12 @@ public class PopUp_Board extends Window implements Editor<Hom02_BoardModel>, Int
 		this.admin = admin;
 		this.boardType = boardType;
 		this.callback = callback;
+		
+		if(admin) {
+			fileForm = new Sys10_Lookup_MultiFile(null, "Y", 120);
+		} else {
+			fileForm = new Sys10_Lookup_MultiFile(null, "N", 120);
+		}
 		
 		this.setModal(true);
 		this.setBorders(false);

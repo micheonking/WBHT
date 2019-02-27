@@ -61,7 +61,6 @@ public class CoverPageFooter extends ContentPanel {
 			@Override
 			public void onSelect(SelectEvent event) {
 //				StartPage.openTabPage(StartPage.tabPanel, "KFIA소식");
-				Info.display("","1");
 //				startPage.changePage("4");
 			}
 		});

@@ -157,7 +157,6 @@ public class Sys10_Lookup_MultiFile extends VerticalLayoutContainer {
     }
     
 	public void changeViewLayout() {
-		Info.display("aaa", "changeViewLayout");
 		uploadButton.hide();
 		grid.setHeight(height + 35);
 		grid.getColumnModel().getColumn(2).setWidth(370);

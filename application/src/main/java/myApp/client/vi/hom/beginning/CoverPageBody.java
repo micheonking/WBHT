@@ -70,7 +70,9 @@ public class CoverPageBody extends ContentPanel {
 				+	"<span style='font-size:0.1em;'><br><br></span>"
 				+	"</div>"
 				);
-		LabelToolItem labelToolItem1 = new LabelToolItem(label1Html);
+	    TextButton labelToolItem1 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
+	    labelToolItem1.setHTML(label1Html);
+//		TextButton labelToolItem1 = new TextButton(label1Html);
 		labelToolItem1.setWidth(300);
 //		labelToolItem1.setHeight(142);
 //		labelToolItem1.setBorders(true);

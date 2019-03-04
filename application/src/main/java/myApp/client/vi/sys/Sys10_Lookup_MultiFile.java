@@ -105,10 +105,7 @@ public class Sys10_Lookup_MultiFile extends VerticalLayoutContainer {
 
 		if("Y".equals(editYn)) {
 		} else {
-			uploadButton.hide();
-			grid.setHeight(height + 35);
-			grid.getColumnModel().getColumn(5).setHidden(true);
-			grid.getColumnModel().getColumn(2).setWidth(370);
+			changeViewLayout();
 		}
 	}
 
@@ -162,8 +159,8 @@ public class Sys10_Lookup_MultiFile extends VerticalLayoutContainer {
 	public void changeViewLayout() {
 		uploadButton.hide();
 		grid.setHeight(height + 35);
-//		grid.getColumnModel().getColumn(2).setWidth(370);
-		grid.getColumnModel().getColumn(5).setHidden(hidden);
+		grid.getColumnModel().getColumn(2).setWidth(370);
+		grid.getColumnModel().getColumn(5).setHidden(true);
 		grid.getView().refresh(true);
 	}
 

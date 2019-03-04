@@ -164,7 +164,6 @@ public class Sys90_Edit_Board extends ContentPanel implements Editor<Sys90_After
 	}
 	
 	protected void updateRow() {
-		Info.display("","여기");
 		GridUpdate<Sys90_AfterServiceModel> service = new GridUpdate<Sys90_AfterServiceModel>();
 		service.update(grid.getStore(), editDriver.flush(), "sys.Sys90_AfterService.update");
 	}

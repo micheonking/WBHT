@@ -61,13 +61,13 @@ public class CoverPageBody extends ContentPanel {
 //				+	"</div>"
 //				);
 		SafeHtml label1Html = SafeHtmlUtils.fromTrustedString(	"<center>"
-				+	"<div style='background-color: #1d7bbb; line-height:130%; border:2px solid silver'>"
+				+	"<div style='background-color: #1d7bbb; line-height:115%; border:2px solid silver'>"
 //				+	"<div><img src='img/icon_left.png' width='32' height='40'></div>"
-				+	"<span style='font-weight:bold;font-size:1.1em;'><font color='#eeeeee'><br>발열섬유패드제품 특장점</font></span>"
+				+	"<span style='font-weight:bold;font-size:1em;'><font color='#eeeeee'><br>발열섬유패드제품 특장점</font></span>"
 				+	"<span style='font-size:0.1em;'><font color='#eeeeee'><br>____________________________________________________________<br><br></font></span>"
-				+	"<span style='font-weight:normal; font-size:1.1em;'>"
-				+	"<font color='#eeeeee'>자사가 보유하고 있는 핵심기술 및 <br>섬유소재를 활용하여 작업편리성, <br>사용편리성, 건강기능성과 경제성, 안전성, <br>내구성을 가진 뛰어난 제품입니다.<br></font></span>"
-				+	"<span style='font-size:0.1em;'><br><br></span>"
+				+	"<span style='font-weight:normal; font-size:1em;'>"
+				+	"<font color='#eeeeee'>자사가 보유하고 있는 핵심기술 및 <br>섬유소재를 활용하여 작업편리성, <br>사용편리성, 건강기능성과 경제성,<br>안전성, 내구성을 가진 뛰어난<br>제품입니다.</font></span>"
+				+	"<span style='font-size:0.1em;'><br><br><br></span>"
 				+	"</div>"
 				);
 	    TextButton labelToolItem1 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
@@ -76,36 +76,61 @@ public class CoverPageBody extends ContentPanel {
 		labelToolItem1.setWidth(300);
 //		labelToolItem1.setHeight(142);
 //		labelToolItem1.setBorders(true);
+		labelToolItem1.addSelectHandler(new SelectHandler() {
+			@Override
+			public void onSelect(SelectEvent event) {
+				StartPage.page = 2;
+				startPage.changePage("2");
+			}
+		});
 
 		SafeHtml label2Html = SafeHtmlUtils.fromTrustedString(	"<center>"
-				+	"<div style='background-color: #349da0; line-height:130%; border:2px solid silver'>"
+				+	"<div style='background-color: #349da0; line-height:115%; border:2px solid silver'>"
 //				+	"<div><img src='img/icon_middle.png' width='40' height='40'></div>"
-				+	"<span style='font-weight:bold;font-size:1.1em;'><font color='#eeeeee'><br>다양한 발열섬유패드제품</font></span>"
+				+	"<span style='font-weight:bold;font-size:1em;'><font color='#eeeeee'><br>다양한 발열섬유패드제품</font></span>"
 				+	"<span style='font-size:0.1em;'><font color='#eeeeee'><br>____________________________________________________________<br><br></font></span>"
-				+	"<span style='font-weight:normal; font-size:1.1em;'>"
+				+	"<span style='font-weight:normal; font-size:1em;'>"
 				+	"<font color='#eeeeee'>탄소잉크 배합기술과 패턴 디자인 기술을 <br>기반으로 5V, 7.4V, 12V, 24V등 <br>다양한 DC로 제작된  Fabric Heating Pad <br>(면상발열체) 을 제작하고 있습니다.<br></font></span>"
-				+	"<span style='font-size:0.1em;'><br><br></span>"
+				+	"<span style='font-size:0.1em;'><br><br><br></span>"
 				+	"</div>"
 				);
-		LabelToolItem labelToolItem2 = new LabelToolItem(label2Html);
+	    TextButton labelToolItem2 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
+	    labelToolItem2.setHTML(label2Html);
+//		LabelToolItem labelToolItem2 = new LabelToolItem(label2Html);
 		labelToolItem2.setWidth(300);
 //		labelToolItem2.setHeight(142);
 //		labelToolItem2.setBorders(true);
+		labelToolItem2.addSelectHandler(new SelectHandler() {
+			@Override
+			public void onSelect(SelectEvent event) {
+				StartPage.page = 1;
+				startPage.changePage("2");
+			}
+		});
 
 		SafeHtml label3Html = SafeHtmlUtils.fromTrustedString(	"<center>"
-				+	"<div style='background-color: #42339c; line-height:130%; border:2px solid silver'>"
+				+	"<div style='background-color: #42339c; line-height:115%; border:2px solid silver'>"
 //				+	"<div><img src='img/icon_right.png' width='40' height='40'></div>"
-				+	"<span style='font-weight:bold;font-size:1.1em;'><font color='#eeeeee'><br>발열섬유패드 핵심기술</font></span>"
+				+	"<span style='font-weight:bold;font-size:1em;'><font color='#eeeeee'><br>발열섬유패드 핵심기술</font></span>"
 				+	"<span style='font-size:0.1em;'><font color='#eeeeee'><br>____________________________________________________________<br><br></font></span>"
-				+	"<span style='font-weight:normal; font-size:1.1em;'>"
-				+	"<font color='#eeeeee'>특화된 카본 페이스트의 배합기술과 <br>제품특성에 따른 패턴 디자인, <br>PTC 면상발열기술을 통해 다양한 소재와 <br>다양한 용도에 맞게 제품을 구현할 수 있는 <br>기술력을 보유하고 있습니다.</font></span>"
+				+	"<span style='font-weight:normal; font-size:1em;'>"
+				+	"<font color='#eeeeee'>특화된 카본 페이스트의 배합기술과 <br>제품특성에 따른 패턴 디자인, <br>PTC 면상발열기술을 통해 다양한<br>소재와 다양한 용도에 맞게 제품을<br>구현할 수 있는 기술력을 보유하고<br>있습니다.</font></span>"
 				+	"<span style='font-size:0.1em;'><br><br></span>"
 				+	"</div>"
 				);
-		LabelToolItem labelToolItem3 = new LabelToolItem(label3Html);
+	    TextButton labelToolItem3 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
+	    labelToolItem3.setHTML(label3Html);
+//		LabelToolItem labelToolItem3 = new LabelToolItem(label3Html);
 		labelToolItem3.setWidth(300);
 //		labelToolItem3.setHeight(142);
 //		labelToolItem3.setBorders(true);
+		labelToolItem3.addSelectHandler(new SelectHandler() {
+			@Override
+			public void onSelect(SelectEvent event) {
+				StartPage.page = 1;
+				startPage.changePage("3");
+			}
+		});
 
 		HBoxLayoutContainer boxHBox = new HBoxLayoutContainer();
 		boxHBox.setHBoxLayoutAlign(HBoxLayoutAlign.MIDDLE);

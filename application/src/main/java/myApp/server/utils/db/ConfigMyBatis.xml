@@ -29,12 +29,12 @@
 
 		<!-- MySQL -->
 			<property name="driver" value="com.mysql.jdbc.Driver" />
-<!-- 			<property name="url" value="jdbc:mysql://localhost:3306/wbht?useSSL=false" /> -->
-<!-- 			<property name="username" value="root" /> -->
-<!-- 			<property name="password" value="root" /> -->
-			<property name="url" value="jdbc:mysql://localhost:3306/heattech540?useSSL=false" />
-			<property name="username" value="heattech540" />
-			<property name="password" value="wbht0701" />
+			<property name="url" value="jdbc:mysql://localhost:3306/wbht?useSSL=false" />
+			<property name="username" value="root" />
+			<property name="password" value="root" />
+<!-- 			<property name="url" value="jdbc:mysql://localhost:3306/heattech540?useSSL=false" /> -->
+<!-- 			<property name="username" value="heattech540" /> -->
+<!-- 			<property name="password" value="wbht0701" /> -->
 				
 		</dataSource>
 	</environment>
@@ -45,30 +45,30 @@
 	<mapper resource="myApp/server/utils/db/mapper/DBConfig.xml"/>
 
 	<!-- database WBHT 처리 -->
-	<mapper resource="myApp/server/hom/mapper/hom01_outline.xml"/>
+<!-- 	<mapper resource="myApp/server/hom/mapper/hom01_outline.xml"/> -->
 	<mapper resource="myApp/server/hom/mapper/hom02_board.xml"/>
-	<mapper resource="myApp/server/hom/mapper/hom03_operating.xml"/>
+<!-- 	<mapper resource="myApp/server/hom/mapper/hom03_operating.xml"/> -->
 	<mapper resource="myApp/server/hom/mapper/hom04_history.xml"/>
 	
 	<!-- 개별 업무단 처리  -->
-	<mapper resource="myApp/server/dbm/mapper/dbm01_tab_comments.xml"/>
-	<mapper resource="myApp/server/dbm/mapper/dbm02_col_comments.xml"/>
-	<mapper resource="myApp/server/dbm/mapper/dbm03_tab_columns.xml"/>
+<!-- 	<mapper resource="myApp/server/dbm/mapper/dbm01_tab_comments.xml"/> -->
+<!-- 	<mapper resource="myApp/server/dbm/mapper/dbm02_col_comments.xml"/> -->
+<!-- 	<mapper resource="myApp/server/dbm/mapper/dbm03_tab_columns.xml"/> -->
 
-	<mapper resource="myApp/server/sys/mapper/sys01_company.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys02_user.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys03_company_menu.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys04_role.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys05_user_role.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys06_menu.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys07_role_menu.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys08_code_kind.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys09_code.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys10_file.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys21_license_code.xml"/>
-	<mapper resource="myApp/server/sys/mapper/sys90_after_service.xml"/>
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys01_company.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys02_user.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys03_company_menu.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys04_role.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys05_user_role.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys06_menu.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys07_role_menu.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys08_code_kind.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys09_code.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys10_file.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys21_license_code.xml"/> -->
+<!-- 	<mapper resource="myApp/server/sys/mapper/sys90_after_service.xml"/> -->
 
-	<mapper resource="myApp/server/bbs/mapper/bbs01_board.xml"/>
+<!-- 	<mapper resource="myApp/server/bbs/mapper/bbs01_board.xml"/> -->
 
 </mappers>
 

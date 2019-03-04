@@ -36,6 +36,7 @@ public class StartPage extends BorderLayoutContainer {
 	public static final int SNOTE_HEIGHT = 300;	//	내용부분 높이조절용 : 높이에서 뺄 Size...
 	
 	public static int newsPage = 1;
+	public static int page = 1;
 	public static int CURRENTWIDTH = 770;
 	public static int CURRENTHEIGHT = 0;
 	static String CURRENTPAGE = "0";

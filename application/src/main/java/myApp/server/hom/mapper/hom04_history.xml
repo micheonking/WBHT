@@ -23,4 +23,28 @@
 	order by hom04_history_id desc
 </select>
 
+<select id="selectByAll" resultMap="mapper" parameterType="Long" >
+	select	*
+	from	hom04_history
+	order by hom04_history_id desc
+</select>
+
+<insert id="insert" parameterType="myApp.client.vi.hom.company.model.Hom04_HistoryModel">
+		insert
+		  into hom04_history
+		     ( hom04_history_id
+		     , hom04_company_id
+		     , hom04_history_ym
+		     , hom04_career_note
+		     )
+		     values
+		     ( #{historyId}
+		     , #{companyId}
+		     , #{historyYm}
+		     , #{careerNote}
+		     ) on duplicate key update
+			  hom04_history_ym = #{historyYm}
+			, hom04_career_note = #{careerNote} 
+	</insert>
+
 </mapper>

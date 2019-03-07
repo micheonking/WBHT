@@ -48,7 +48,7 @@ public class HTMLIntroduction implements javax.servlet.Servlet {
 		
 		String rowHeader = "<br>저희 <strong>【웰빙히트텍】</strong>은 <span style='color:#0000fe; font-weight: 600;'>탄소잉크 배합기술</span>"
 				+	"과 <span style='color:#0000fe; font-weight: 600;'>패턴 디자인 기술</span>을 기반으로 5V, 7.4V, 12V, 24V 등<br>"
-				+	"다양한 DC로 제작된 Fabric Heating Pad (면상발열체) 을 판매하고 있습니다. <br><br>"
+				+	"다양한 DC로 제작된 <span style='color:#DF0101; font-weight: 600;'>Fabric Heating Pad (면상발열체)</span> 을 판매하고 있습니다. <br><br>"
 				+	"고객과 협력회사가 원하는 좋은 제품을 지속 개발하여 보다 더 큰만족을 드리도록<br>"
 				+	"노력하겠습니다. <br><br>"
 				;
@@ -62,9 +62,9 @@ public class HTMLIntroduction implements javax.servlet.Servlet {
 	
 		String rowRight = "<font color='#606060' >"
 				+	"<img src='img/smallTitle.png'>"
-				+	"<span style=\"font-weight:bold;\"> 탄소발열섬유 (Fabric Heating Pad)</span><br>"
+				+	"<span style=\"font-weight:bold; color:#DF0101;\"> 탄소발열섬유 (Fabric Heating Pad)</span><br>"
 				+	"<span style=\"font-size:1.0em;\">1) 5V DC용 Heating Pad</span><br>"
-				+	"<span style=\"font-size:1.0em;\">- 규격 : 30 cm X 30 cm, 30 cm X 20 cm</span><br>"
+				+	"<span style=\"font-size:1.0em;\">- 규격 : 30 cm X 25 cm, 30 cm X 15 cm</span><br>"
 				+	"<span style=\"font-size:1.0em;\">- 용도 : 조끼, 복대, 담요, 방석 등</span><br>"
 				+	"<span style=\"font-size:1.0em;\">2) 12V DC용 Heating Pad</span><br>"
 				+	"<span style=\"font-size:1.0em;\">- 규격 : 30 cm X 50 cm</span><br>"

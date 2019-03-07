@@ -7,6 +7,7 @@ import com.sencha.gxt.widget.core.client.TabPanel;
 import com.sencha.gxt.widget.core.client.container.MarginData;
 
 import myApp.client.vi.hom.bullentin.AdminBoard;
+import myApp.client.vi.hom.bullentin.AdminHistory;
 
 public class Sys00_Admin extends ContentPanel {
 	
@@ -22,6 +23,9 @@ public class Sys00_Admin extends ContentPanel {
 
 		AdminBoard tabAdmin = new AdminBoard();
 		tabPanel.add(tabAdmin, "게시판관리");
+		
+		AdminHistory tabAdminHistory = new AdminHistory();
+		tabPanel.add(tabAdminHistory, "회사연혁");
 
 		this.add(tabPanel, new MarginData(3));
 	}

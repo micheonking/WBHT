@@ -29,12 +29,12 @@
 
 		<!-- MySQL -->
 			<property name="driver" value="com.mysql.jdbc.Driver" />
-			<property name="url" value="jdbc:mysql://localhost:3306/wbht?useSSL=false" />
-			<property name="username" value="root" />
-			<property name="password" value="root" />
-<!-- 			<property name="url" value="jdbc:mysql://localhost:3306/heattech540?useSSL=false" /> -->
-<!-- 			<property name="username" value="heattech540" /> -->
-<!-- 			<property name="password" value="wbht0701" /> -->
+<!-- 			<property name="url" value="jdbc:mysql://localhost:3306/wbht?useSSL=false" /> -->
+<!-- 			<property name="username" value="root" /> -->
+<!-- 			<property name="password" value="root" /> -->
+			<property name="url" value="jdbc:mysql://localhost:3306/heattech540?useSSL=false" />
+			<property name="username" value="heattech540" />
+			<property name="password" value="wbht0701" />
 				
 		</dataSource>
 	</environment>
@@ -64,7 +64,7 @@
 <!-- 	<mapper resource="myApp/server/sys/mapper/sys07_role_menu.xml"/> -->
 <!-- 	<mapper resource="myApp/server/sys/mapper/sys08_code_kind.xml"/> -->
 <!-- 	<mapper resource="myApp/server/sys/mapper/sys09_code.xml"/> -->
-<!-- 	<mapper resource="myApp/server/sys/mapper/sys10_file.xml"/> -->
+	<mapper resource="myApp/server/sys/mapper/sys10_file.xml"/>
 <!-- 	<mapper resource="myApp/server/sys/mapper/sys21_license_code.xml"/> -->
 <!-- 	<mapper resource="myApp/server/sys/mapper/sys90_after_service.xml"/> -->
 

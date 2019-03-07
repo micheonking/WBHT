@@ -28,7 +28,8 @@ public class Sys10_File {
 	}
 
 	public void selectByParentId(SqlSession sqlSession, ServiceRequest request, ServiceResult result) {
-		Long parentId = request.getLongParam("parentId"); 
+		Long parentId = request.getLongParam("parentId");
+		System.out.println("============== parentId : " + parentId);
 		List<GridDataModel> list = sqlSession.selectList(mapperName + ".selectByParentId",  parentId);
 		result.setRetrieveResult(1, "select ok", list);
 	}

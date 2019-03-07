@@ -113,15 +113,17 @@ public class PopUp_Board extends Window implements Editor<Hom02_BoardModel>, Int
 		});
 		this.addButton(cancelButton);
 		
-		//삭제 버튼ADD
-		deleteButton.setWidth(50);
-		deleteButton.addSelectHandler(new SelectHandler() {
-			@Override
-			public void onSelect(SelectEvent event) {
-				deleteRow();
-			}
-		});
-		this.addButton(deleteButton);
+		if (admin) {
+			//삭제 버튼ADD
+			deleteButton.setWidth(50);
+			deleteButton.addSelectHandler(new SelectHandler() {
+				@Override
+				public void onSelect(SelectEvent event) {
+					deleteRow();
+				}
+			});
+			this.addButton(deleteButton);
+		}
 	}
 
 	protected void deleteRow() {

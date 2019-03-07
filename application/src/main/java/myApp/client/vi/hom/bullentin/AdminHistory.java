@@ -50,8 +50,8 @@ public class AdminHistory extends VerticalLayoutContainer implements InterfaceGr
 		Hom04_HistoryModelProperties properties = GWT.create(Hom04_HistoryModelProperties.class);
 		GridBuilder<Hom04_HistoryModel> gridBuilder = new GridBuilder<Hom04_HistoryModel>(properties.keyId());  
 		gridBuilder.setChecked(SelectionMode.SINGLE);
-		gridBuilder.addText(properties.historyYm(), 200, "경력년도");
-		gridBuilder.addText(properties.careerNote(), 200, "주요경력");
+		gridBuilder.addText(properties.historyYm(), 280, "경력년도");
+		gridBuilder.addText(properties.careerNote(), 1500, "주요경력");
 
 		return gridBuilder.getGrid(); 
 	}

@@ -59,7 +59,7 @@ public class HTMLCore implements javax.servlet.Servlet {
 
 		String rowLeft = "<font color='#606060' >"
 //			 	+	"<img src='img/smallTitle.png'>"
-			 	+	"<span style=\"font-weight:bold;\"> 상한온도 설정방식----</span><br>"
+			 	+	"<span style=\"font-weight:bold;\"> 상한온도 설정방식</span><br>"
 			 	;
 	
 		String rowRight = "<font color='#606060' >"

@@ -108,7 +108,19 @@ public class TabProduct extends ContentPanel {
 		menuHBar.add(menuVBox, boxLayoutData);
 
 		totalHBar.add(menuHBar);
-		totalHBar.add(getIntroduction());
+
+		switch (StartPage.page) {
+		case 1 :
+			totalHBar.add(getIntroduction());
+			break;
+		case 2 :
+			totalHBar.add(getCompetitiveness());
+			break;
+		default :
+			totalHBar.add(getIntroduction());
+			break;
+		}
+//		totalHBar.add(getIntroduction());
 		centerVBox.add(totalHBar);
 
 		headerVBox.add(centerVBox);

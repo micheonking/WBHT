@@ -1,25 +1,16 @@
 package myApp.client.vi.hom.bullentin;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeHandler;
-import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.sencha.gxt.cell.core.client.form.ComboBoxCell.TriggerAction;
 import com.sencha.gxt.core.client.Style.SelectionMode;
-import com.sencha.gxt.core.client.util.ToggleGroup;
-import com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer;
-import com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData;
 import com.sencha.gxt.widget.core.client.event.CollapseEvent;
 import com.sencha.gxt.widget.core.client.event.RowClickEvent;
 import com.sencha.gxt.widget.core.client.event.CollapseEvent.CollapseHandler;
 import com.sencha.gxt.widget.core.client.event.RowClickEvent.RowClickHandler;
 import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer;
 import com.sencha.gxt.widget.core.client.form.FieldLabel;
-import com.sencha.gxt.widget.core.client.form.Radio;
 import com.sencha.gxt.widget.core.client.form.StringComboBox;
 import com.sencha.gxt.widget.core.client.grid.Grid;
-import com.sencha.gxt.widget.core.client.info.Info;
 
 import myApp.client.grid.GridBuilder;
 import myApp.client.grid.InterfaceGridOperate;

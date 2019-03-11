@@ -46,13 +46,11 @@
 </select>
 
 <select id="selectOneByParentId" resultMap="mapper" parameterType="Long" > 
-select * from (
 	select 	sys10_file.*
 	from 	sys10_file
 	where	sys10_parent_id = #{parentId}
     order by sys10_file_id desc
-    ) a
-limit 1
+	limit 1
 </select>
 
 <select id="selectOneFileName" resultType="String" parameterType="Long" >

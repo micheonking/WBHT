@@ -66,7 +66,7 @@ public class StartPageHeader extends BorderLayoutContainer {
 		SafeHtml safeLabelHtml = SafeHtmlUtils.fromTrustedString(
 					"<div style='background-color: transparent; line-height:1.3em;'>"
 				+	"<font color='#606060' style='font-family:NamumGothic; font-size:1.2em;font-weight:bold'>"
-				+	"<span style='color:#c00000;'>탄소발열체 전문기업</span>"
+				+	"<span style='color:#c00000;'>탄소발열섬유 전문기업</span>"
 				+	"<br>"
 				+	"주식회사 웰빙히트텍"
 				+	"</font></div>");

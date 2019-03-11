@@ -128,7 +128,22 @@ public class TabTechnology extends ContentPanel {
 		menuHBar.add(menuVBox, boxLayoutData);
 
 		totalHBar.add(menuHBar);
-		totalHBar.add(getCore());
+
+		switch (StartPage.page) {
+		case 1 :
+			totalHBar.add(getCore());
+			break;
+		case 2 :
+			totalHBar.add(getPatent());
+			break;
+		case 3 :
+			totalHBar.add(getCertification());
+			break;
+		default :
+			totalHBar.add(getCore());
+			break;
+		}
+//		totalHBar.add(getCore());
 		centerVBox.add(totalHBar);
 
 		headerVBox.add(centerVBox);

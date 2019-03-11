@@ -34,6 +34,8 @@ public class FileUpload implements javax.servlet.Servlet {
 	private String getUploadPath(Long fileId){
 		MyAppProperties a = new MyAppProperties("filePath");
 //		return a.getProperty() + (fileId/100);
+		
+		System.out.println("=============> getUploadPath : " + a.getProperty()); 
 		return a.getProperty();
 	}
 	
@@ -83,10 +85,14 @@ public class FileUpload implements javax.servlet.Servlet {
 				File subDir  = new File(fileModel.getServerPath());
 				
 		        if(!subDir.exists()) {
-		        	subDir.mkdir(); // 해당 폴더가 없으면 신규로 만든다.   
+		        	subDir.mkdir(); // 해당 폴더가 없으면 신규로 만든다.
 		        }
 				
 		        File file = new File(fileModel.getServerPath(), fileModel.getFileId().toString());
+		        
+		        System.out.println("===> fileModel.getServerPath() : " + fileModel.getServerPath());
+		        System.out.println("===> fileModel.getFileId().toString() : " + fileModel.getFileId().toString());
+		        
 			    //file.deleteOnExit(); // Update할것. 
 		        fileItem.write(file);
 			}
@@ -128,7 +134,11 @@ public class FileUpload implements javax.servlet.Servlet {
 			
 			fileModel.setFileId(fileId);
 			fileModel.setParentId(parentId);
-			fileModel.setServerPath(this.getUploadPath(fileModel.getFileId())); //하나의 폴더안에 100개씩 잘라 보관한다.
+
+			String path = this.getUploadPath(fileModel.getFileId());
+			System.out.println("path 1 : " + path);
+			fileModel.setServerPath(path); //하나의 폴더안에 100개씩 잘라 보관한다.
+			System.out.println("path 2 : " + fileModel.getServerPath());
 			
 			String fileName = fileItem.getName() ; 
 			fileModel.setFileName(fileName);

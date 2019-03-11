@@ -44,11 +44,15 @@ public class LoginPage implements InterfaceServiceCall {
 			return;
 		} 
 		else {
-			ServiceRequest request = new ServiceRequest("sys.Sys02_User.getLoginAdminInfo");
-			request.putLongParam  ("companyId", (long)2062721);	//2000940:한국펀드서비스
-			request.putStringParam("otpNumber", "1111");//otpNumber.getValue());
-			ServiceCall service = new ServiceCall(); 
-			service.execute(request, this);
+//			ServiceRequest request = new ServiceRequest("sys.Sys02_User.getLoginAdminInfo");
+//			request.putLongParam  ("companyId", (long)2062721);	//2000940:한국펀드서비스
+//			request.putStringParam("otpNumber", "1111");//otpNumber.getValue());
+//			ServiceCall service = new ServiceCall(); 
+//			service.execute(request, this);
+			this.viewport.remove(container);
+			viewport.add(new StartPage(), new MarginData(0, 0, 0, 0));
+			
+			RootPanel.get().add(viewport);
 		}
 	}
 	

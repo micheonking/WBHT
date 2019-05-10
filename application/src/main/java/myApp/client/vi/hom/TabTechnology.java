@@ -78,7 +78,7 @@ public class TabTechnology extends ContentPanel {
 		menuVBox.add(lineImage0, new BoxLayoutData(new Margins(20, 0, 0, 0)));
 		SafeHtml button1Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><font color='#606060' style='font-size:14px;'>ㆍ핵심기술　　　　　　</font></div> ");
 		SafeHtml button2Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><font color='#606060' style='font-size:14px;'>ㆍ특허·지적재산권　　　</font></div> ");
-		SafeHtml button3Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><font color='#606060' style='font-size:14px;'>ㆍ기술·제품인증　　　　</font></div> ");
+//		SafeHtml button3Html = SafeHtmlUtils.fromTrustedString("<div style='background-color: transparent;'><font color='#606060' style='font-size:14px;'>ㆍ기술·제품인증　　　　</font></div> ");
 
 		TextButton menuButton1 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
 		TextButton menuButton2 = new TextButton(new TextButtonCell(new WhiteButtonCellAppearance<>()));
@@ -111,17 +111,17 @@ public class TabTechnology extends ContentPanel {
 		menuVBox.add(lineImage2, new BoxLayoutData(lineImageMargins));
 
 //		CellButtonBase menuButton3 = new CellButtonBase<>();
-		menuButton3.setSize(StartPage.BTN_WIDTH, StartPage.BTN_HEIGHT);
-		menuButton3.setHTML(button3Html);
+//		menuButton3.setSize(StartPage.BTN_WIDTH, StartPage.BTN_HEIGHT);
+//		menuButton3.setHTML(button3Html);
 //		menuButton3.setBorders(true);
-		menuButton3.addSelectHandler(new SelectHandler() {
-			@Override
-			public void onSelect(SelectEvent event) {
-				getCertification();
-			}
-		});
-		menuVBox.add(menuButton3, new BoxLayoutData(buttonMargins));
-		menuVBox.add(lineImage3, new BoxLayoutData(lineImageMargins));
+//		menuButton3.addSelectHandler(new SelectHandler() {
+//			@Override
+//			public void onSelect(SelectEvent event) {
+//				getCertification();
+//			}
+//		});
+//		menuVBox.add(menuButton3, new BoxLayoutData(buttonMargins));
+//		menuVBox.add(lineImage3, new BoxLayoutData(lineImageMargins));
 
 //		menuVBox.setWidth(StartPage.MENU_WIDTH);
 //		menuVBox.setHeight(StartPage.CON_HEIGHT);

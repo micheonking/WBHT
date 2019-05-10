@@ -69,7 +69,7 @@ public class HTMLIntroduction implements javax.servlet.Servlet {
 				+	"<span style=\"font-size:1.0em;\">2) 12V DC용 Heating Pad</span><br>"
 				+	"<span style=\"font-size:1.0em;\">- 규격 : 30 cm X 50 cm</span><br>"
 				+	"<span style=\"font-size:1.0em;\">- 용도 : 휴대용 매트, 침낭, 소파용 시트 등 캠핑레져용</span><br>"
-				+	"<span style=\"font-size:1.0em;\">3) 24V DC용 Heating Pad</span><br>"
+				+	"<span style=\"font-size:1.0em;\">3) 24V DC용 Heating Pad [개발 중]</span><br>"
 				+	"<span style=\"font-size:1.0em;\">- 규격 : 50 cm X 150 cm<br>"
 				+	"<span style=\"font-size:1.0em;\">- 용도 : 침대용 매트, 이불( Single, Double Mat )</span><br><br>"
 				;

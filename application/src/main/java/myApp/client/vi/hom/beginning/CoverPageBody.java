@@ -90,7 +90,7 @@ public class CoverPageBody extends ContentPanel {
 				+	"<span style='font-weight:bold;font-size:1em;'><font color='#eeeeee'><br>다양한 발열섬유패드제품</font></span>"
 				+	"<span style='font-size:0.1em;'><font color='#eeeeee'><br>____________________________________________________________<br><br></font></span>"
 				+	"<span style='font-weight:normal; font-size:1em;'>"
-				+	"<font color='#eeeeee'>탄소잉크 배합기술과 패턴 디자인 기술을 <br>기반으로 5V, 7.4V, 12V, 24V등 <br>다양한 DC로 제작된  Fabric Heating Pad <br>(면상발열체) 을 제작하고 있습니다.<br></font></span>"
+				+	"<font color='#eeeeee'>탄소잉크 배합기술과 패턴 디자인 기술을 <br>기반으로 5V, 7.4V, 12V, 24V등 <br>다양한 DC로 제작된  Fabric Heating Pad <br>(면상발열체) 를 제작 및 연구하고 있습니다.<br></font></span>"
 				+	"<span style='font-size:0.1em;'><br><br><br></span>"
 				+	"</div>"
 				);

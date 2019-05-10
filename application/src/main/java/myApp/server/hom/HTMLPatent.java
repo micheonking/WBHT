@@ -73,10 +73,15 @@ public class HTMLPatent implements javax.servlet.Servlet {
 //				+	"<img src='img/smallTitle.png'>"
 				+	"<span style=\"font-weight:bold;\"> 취득일자 </span><br>"
 				;
+		
+		String rowRight2 = "<font color='#606060' >"
+				+	"<span style=\"font-weight:bold;\"> 비고 </span><br>"
+				;
 		rowString = "";
 		rowString += this.tdData(rowLeft, INTLEFT, 0); 
 		rowString += this.tdData(rowCenter, INTCENTER, 0); 
 		rowString += this.tdData(rowRight, INTRIGHT, 0); 
+		rowString += this.tdData(rowRight2, INTRIGHT, 0); 
 		rowList.add(this.tr(rowString)) ; 
 
 		rowLeft = "";
@@ -84,22 +89,26 @@ public class HTMLPatent implements javax.servlet.Servlet {
 		rowRight = "";
 		rowLeft = "<font color='#606060' >"
 //			 	+	"<img src='img/smallTitle.png'>"
-			 	+	"<span style=\"font-weight:bold;\"> 10-2018-0085752</span><br>"
+			 	+	"<span style=\"font-weight:bold;\">특허 제 10-2019-0040168 </span><br>"
 			 	;
 	
 		rowCenter = "<font color='#606060' >"
 //			 	+	"<img src='img/smallTitle.png'>"
-			 	+	"<span style=\"font-weight:bold;\"> 발열카본잉크의 인쇄층이 형성된 온열 매트</span><br>"
+			 	+	"<span style=\"font-weight:bold;\"> 직물원단의 표면에 발열카본잉크의 인쇄층이 형성된 온열시트</span><br>"
 			 	;
 	
 		rowRight = "<font color='#606060' >"
 //				+	"<img src='img/smallTitle.png'>"
-				+	"<span style=\"font-weight:bold;\"> 2019.3(예정) </span><br>"
+				+	"<span style=\"font-weight:bold;\">(출원중) </span><br>"
+				;
+		rowRight2 = "<font color='#606060' >"
+				+	"<span style=\"font-weight:bold;\">  </span><br>"
 				;
 		rowString = "";
 		rowString += this.tdData1(rowLeft, INTLEFT, 0); 
 		rowString += this.tdData1(rowCenter, INTCENTER, 0); 
 		rowString += this.tdData1(rowRight, INTRIGHT, 0); 
+		rowString += this.tdData1(rowRight2, INTRIGHT, 0); 
 		rowList.add(this.tr(rowString)) ; 
 
 		rowLeft = "";
@@ -119,10 +128,15 @@ public class HTMLPatent implements javax.servlet.Servlet {
 //				+	"<img src='img/smallTitle.png'>"
 				+	"<span style=\"font-weight:bold;\"> 2015. 8</span><br>"
 				;
+		
+		rowRight2 = "<font color='#606060' >"
+				+	"<span style=\"font-weight:bold;\"> 관계자 지원기술 </span><br>"
+				;
 		rowString = "";
 		rowString += this.tdData1(rowLeft, INTLEFT, 0); 
 		rowString += this.tdData1(rowCenter, INTCENTER, 0); 
 		rowString += this.tdData1(rowRight, INTRIGHT, 0); 
+		rowString += this.tdData1(rowRight2, INTRIGHT, 0); 
 		rowList.add(this.tr(rowString)) ; 
 
 		rowLeft = "";
@@ -142,10 +156,16 @@ public class HTMLPatent implements javax.servlet.Servlet {
 //				+	"<img src='img/smallTitle.png'>"
 				+	"<span style=\"font-weight:bold;\"> 2013. 12</span><br>"
 				;
+		
+		rowRight2 = "<font color='#606060' >"
+				+	"<span style=\"font-weight:bold;\"> 관계자 지원기술 </span><br>"
+				;
+		
 		rowString = "";
 		rowString += this.tdData1(rowLeft, INTLEFT, 0); 
 		rowString += this.tdData1(rowCenter, INTCENTER, 0); 
 		rowString += this.tdData1(rowRight, INTRIGHT, 0); 
+		rowString += this.tdData1(rowRight2, INTRIGHT, 0); 
 		rowList.add(this.tr(rowString)) ; 
 
 

@@ -47,8 +47,9 @@ public class HTMLGreetings implements javax.servlet.Servlet {
 		String rowText1 = "저희 회사는 <strong>【탄소발열체】</strong>의 R&D를 전문적으로 하는 회사로서 <span style='color:#0000fe; font-weight: 600;'>『Wellbeing for Humanbeing』</span>이라는";
 		String rowText2 = "슬로건아래 지난 20여년간 인류의 편안한 삶을 위한 제품을 연구개발 및 생산하는데 총력을 기울여 왔습니다.";
 		String rowText3 = "";
-		String rowText4 = "저희는 발열소재를 혁신적으로 발전시켜 세계 최초로 탄소와 은나노를 천에 Printing하여 발열시키는 기술을 ";
-		String rowText5 = "개발하여 매트, 조끼, 복대, 시트 등 침구류와 의류에 적용할 수 있는 제품을 개발 및 완성하였습니다.";
+		String rowText4 = "저희는 발열소재를 혁신적으로 발전시켜 세계 최초로 탄소페이스트와 은나노를 천에 Printing하여";
+		String rowText5 = " 발열시키는 기술을 개발하여 매트, 조끼, 복대 등 침구류와 의류에 적용할 수 있는 제품을 개발 및 완성하였습니다."
+				+ "&nbsp; 그리고 시트 등 침구류에도 적용할 수 있도록 지속적인 개발을 하고 있습니다.";
 		String rowText6 = "";
 		String rowText7 = "저희는 그동안 축적해온 <strong>【탄소발열체】</strong>에 대한 전문화된 능력과 노하우를 바탕으로 제품혁신과";
 		String rowText8 = "가격경쟁력에 주력하여 제품의 세계화를 통한 <span style='color:#0000fe; font-weight: 600;'>『Wellbeing for Humanbeing』</span><strong>(인류복지)증진</strong>에";

@@ -38,8 +38,8 @@ public class HTMLOutline implements javax.servlet.Servlet {
 		String rowString = "";
 		
 		String rowText0 = "저희 웰빙히트텍은 카본페이스트의 핵심 기술을 기반으로 패턴 디자인을 다양화하고 사업협력 네트워크";
-		String rowText1 = "구축을 통하여 사업협력 네트워크 구축을 통하여  지속적인 혁신성장을 구현하고자 하는 탄소발열체 "; 
-		String rowText2 = "전문기업입니다.";
+		String rowText1 = "구축을 통하여 지속적인 혁신성장을 구현하고자 하는 탄소발열체 전문기업입니다. "; 
+		String rowText2 = " ";
 		String rowBlank = "<br>";
 		
 		String rowText3 = "<font color='#606060' >"

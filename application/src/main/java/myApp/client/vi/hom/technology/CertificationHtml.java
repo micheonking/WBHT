@@ -60,7 +60,7 @@ public class CertificationHtml extends ContentPanel {
 		htmlLayoutContainer.setHeight(StartPage.CURRENTHEIGHT); //600 - StartPage.CURRENTHEIGHT);
 
 		totalHBar.add(htmlLayoutContainer, new BoxLayoutData(totalHBarMargins));
-		gridVBox.add(StartPage.getTextContents("기술·제품인증"),new BoxLayoutData(getTextMargins));
+//		gridVBox.add(StartPage.getTextContents("기술·제품인증"),new BoxLayoutData(getTextMargins));
 		gridVBox.add(lineBar0,new BoxLayoutData(lineBar0Margins));
 		gridVBox.add(totalHBar);
 

@@ -112,8 +112,8 @@ public class HTMLCore implements javax.servlet.Servlet {
 				+	"<span style=\"font-size:1.0em;\">외부 물체(주로 인체) 접촉시 자동으로 온도가 변환(탄소 열전도율</span><br>"
 				+	"<span style=\"font-size:1.0em;\">특성)되어 인체에 거부감(Hot heat)이 없는 쾌적한 온도를 유지해 줌.<br></span><br>"
 				+	"<span style=\"font-size:1.0em;\">* PTC ( 정특성 온도계수 )"
-				+	"<span style=\"font-size:1.0em;\">- 임계온도 이하에서  전기흐름을 양호하게하고 임계온도에 이르면 </span><br>"
-				+	"<span style=\"font-size:1.0em;\">  전류 흐름을 감소시킴. </span><br><br>"
+				+	"<span style=\"font-size:1.0em;\">- 임계온도 이하에서  전기흐름을 양호하게하고 임계온도에 이르면 전류 흐름을 감소시킴.</span><br>"
+				+	"<span style=\"font-size:1.0em;\">   </span><br><br>"
 				;
 		rowString = "";
 		rowString += this.tdData(rowLeft, INTLEFT, 0); 
